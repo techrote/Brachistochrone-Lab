@@ -58,3 +58,4 @@ function toggle(){cancelRepeat();if(!running&&elapsed>=finish)elapsed=0;running=
 Object.keys(c).forEach(function(k){c[k].addEventListener('input',function(){if(k==='rate'){labels();return}reset(true)})});play.addEventListener('click',toggle);repeat.addEventListener('change',function(){if(!repeat.checked&&repeatTimer){cancelRepeat();status.textContent='Race complete';playState()}});document.getElementById('restart').addEventListener('click',function(){reset(false)});document.getElementById('defaults').addEventListener('click',function(){Object.keys(defs).forEach(function(k){c[k].value=defs[k]});reset(true)});window.addEventListener('keydown',function(e){if(e.code==='Space'&&e.target.tagName!=='INPUT'&&e.target.tagName!=='BUTTON'){e.preventDefault();toggle()}if(e.key.toLowerCase()==='r'&&e.target.tagName!=='INPUT')reset(false)});new ResizeObserver(draw).observe(canvas.parentElement);build();labels();draw();
 }());
 </script></body></html>
+
